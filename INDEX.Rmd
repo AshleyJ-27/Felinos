@@ -62,8 +62,28 @@ felinos %>%
 
 
 # Gráfico
-```{r}
+```{r Gráfico, message=FALSE, echo=FALSE}
 
+gráfico_barras <-
+  felinos %>%
+  ggplot(aes(x = species)) +
+  geom_bar() 
+
+ggplotly(gráfico_barras)
+  
+```
+
+# Mapa
+```{r mapa, message=FALSE, echo=FALSE}
+leaflet() %>%
+  addTiles() %>% # capa base de OSM
+  addCircleMarkers( # capa de registros de presencia (puntos)
+    data = felinos,
+    stroke = F,
+    radius = 4,
+    fillColor = 'blue',
+    fillOpacity = 1
+  )
 ```
 
 
