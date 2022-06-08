@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Presentacion
+# Presentación
 ```{r carga-paquetes, message=FALSE}
 library(dplyr)
 library(ggplot2)
@@ -34,20 +34,34 @@ felinos <-
 
 # Tabla
 
-```{r Tabla}
+```{r Tabla, echo=FALSE}
 # Visualización de datos de felinos en formato tabular
 felinos %>%
-  select(species, eventDate, stateProvince, locality, decimalLongitude, decimalLatitude) %>%
+  select(species,
+         eventDate,
+         stateProvince,
+         locality,
+         decimalLongitude,
+         decimalLatitude) %>%
   st_drop_geometry() %>%
-  datatable( colnames = c("Especie", "Fecha", "Provincia", "Localidad", "Longitud", "Latitud"),
+  datatable(
+    colnames = c(
+      "Especie",
+      "Fecha",
+      "Provincia",
+      "Localidad",
+      "Longitud",
+      "Latitud"
+    ),
     options = list(
-    pageLength = 10,
-    language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')
-  ))
+      pageLength = 10,
+      language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')
+    )
+  )
 ```
 
 
-# Grafico
+# Gráfico
 ```{r}
 
 ```
