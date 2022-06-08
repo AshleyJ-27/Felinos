@@ -39,14 +39,18 @@ felinos <-
 felinos %>%
   select(species, eventDate, stateProvince, locality, decimalLongitude, decimalLatitude) %>%
   st_drop_geometry() %>%
-  datatable(options = list(
-    pageLength = 5,
+  datatable( colnames = c("Especie", "Fecha", "Provincia", "Localidad", "Longitud", "Latitud"),
+    options = list(
+    pageLength = 10,
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')
   ))
 ```
 
 
 # Grafico
+```{r}
+
+```
 
 
 
